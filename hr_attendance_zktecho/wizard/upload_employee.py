@@ -23,10 +23,11 @@ class UpaloadEmployee(models.TransientModel):
             else:
                 _logger.info("Uploading employee: %s...." %(rec.name))
 
-                if rec.category_code == 'LOCAL':
-                    employee_name = "%s %s" % (rec.first_name, str(rec.last_name)[0])
-                else:
-                    employee_name = "%s" % (rec.alias)
+#                 if rec.category_code == 'LOCAL':
+#                     employee_name = "%s %s" % (rec.first_name, str(rec.last_name)[0])
+#                 else:
+#                     employee_name = "%s" % (rec.alias)
+                employee_name = "%s" % (rec.name)
 
                 sequence = int(self.env['ir.sequence'].next_by_code(active_id.sequence_id.code))
 
